@@ -1,0 +1,63 @@
+version: '3'
+
+services:
+  api:
+    container_name: api
+    image: api
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    env_file:
+      - api/.env
+    command: >
+      sh -c "python manage.py makemigrations && 
+      python manage.py migrate && 
+      python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - static_data:/api/static
+    expose:
+      - 8000
+    networks:
+      - custom
+
+
+  web:
+    container_name: web
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - static_data:/var/www/html/static
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - api
+    networks:
+      - custom
+
+
+  telebot:
+    container_name: telebot
+    image: telebot
+    restart: always
+    build:
+      context: .
+      dockerfile: ./telebot/Dockerfile
+    env_file:
+      - telebot/.env
+    command: >
+      sh -c "python main.py"
+    expose:
+      - 6000
+    depends_on:
+      - api
+      - web
+    networks:
+      - custom
+
+
+networks:
+  custom:
+    driver: bridge
+
+volumes:
+  static_data:
