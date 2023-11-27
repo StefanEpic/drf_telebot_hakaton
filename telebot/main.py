@@ -6,7 +6,7 @@ from aiogram.enums.parse_mode import ParseMode
 from aiogram.filters import Command
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from config import BOT_TOKEN
+from telebot_config import BOT_TOKEN
 from commands.base import start_bot
 from commands.callbacks import send_emotion_video_result, send_food_video_result, get_selected_video
 from commands.commands import start, vote_emotion, vote_food, select_video

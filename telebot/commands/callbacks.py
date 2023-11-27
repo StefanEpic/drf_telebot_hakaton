@@ -1,7 +1,7 @@
 import requests
 from aiogram.types import CallbackQuery
 
-from config import SITE_URL
+from telebot_config import SITE_URL
 from .utils.callback_factory import EmotionVideo, FoodVideo, SelectVideo
 
 
