@@ -5,8 +5,8 @@ Telegram bot youtube blogger [Приятный Ильдар](https://www.youtube
 Bot for blogger’s personal telegram channel
 
 The bot has commands:
-- `/vote_emotion` - poll vote: what emotion is associated with the video?
-- `/vote_food` - poll vote: what food is associated with the video?
+- `/vote_emotion` - vote: what emotion is associated with the video?
+- `/vote_food` - vote: what food is associated with the video?
 - `/select_video` - choose a video based on emotion and a snack for the video
 
 👉 [Presentation video](https://drive.google.com/file/d/16fTpsrhUQ0DJNTDCab_toDnviKzuT6yb/view?usp=drive_link)
