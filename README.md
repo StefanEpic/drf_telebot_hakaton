@@ -15,7 +15,7 @@ The bot has commands:
 
 👉 [Swagger](http://31.129.98.245/api/v1/schema/swagger-ui/)
 
-## 📈 Tests
+## 📈 DRF API Tests
 ```
 Name                                Stmts   Miss  Cover
 -------------------------------------------------------
