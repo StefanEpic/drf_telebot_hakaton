@@ -14,10 +14,10 @@ async def send_emotion_video_result(call: CallbackQuery, callback_data: EmotionV
         emotion_url = f"{SITE_URL}/api/v1/emotions/{callback_data.emotion_id}"
         response = requests.get(emotion_url)
 
-        await call.message.answer("Спасибо! Твой голос учтен 🤗")
+        await call.message.answer("🤗 Спасибо! Твой голос учтен")
         await call.message.answer_sticker(f"{response.json()['sticker_id']}")
     else:
-        await call.message.answer("Упс, что-то пошло не так 🤪")
+        await call.message.answer("🤪 Упс, что-то пошло не так")
 
 
 async def send_food_video_result(call: CallbackQuery, callback_data: FoodVideo) -> None:
@@ -29,10 +29,10 @@ async def send_food_video_result(call: CallbackQuery, callback_data: FoodVideo) 
         food_url = f"{SITE_URL}/api/v1/foods/{callback_data.food_id}"
         response = requests.get(food_url)
 
-        await call.message.answer("Спасибо! Твой голос учтен 🤗")
+        await call.message.answer("🤗 Спасибо! Твой голос учтен")
         await call.message.answer_sticker(f"{response.json()['sticker_id']}")
     else:
-        await call.message.answer("Упс, что-то пошло не так 🤪")
+        await call.message.answer("🤪 Упс, что-то пошло не так")
 
 
 async def get_selected_video(call: CallbackQuery, callback_data: SelectVideo) -> None:
@@ -50,6 +50,6 @@ async def get_selected_video(call: CallbackQuery, callback_data: SelectVideo) ->
                 await call.message.answer("К этому видео отлично подходит закуска:")
                 await call.message.answer_sticker(f'{food_response.json()["food"]["sticker_id"]}')
         else:
-            await call.message.answer("C этой эмоцией пока не связано ни одно видео 🤪")
+            await call.message.answer("🤪 C этой эмоцией пока не связано ни одно видео")
     else:
-        await call.message.answer("Упс, что-то пошло не так 🤪")
+        await call.message.answer("🤪 Упс, что-то пошло не так")

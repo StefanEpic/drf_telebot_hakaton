@@ -7,7 +7,13 @@ from .utils.keyboards import vote_emotion_keyboard, vote_food_keyboard, select_v
 
 async def start(message: types.Message) -> None:
     await message.reply(
-        f"👋 Привет, {message.from_user.first_name}!\n Это бот Приятного Ильдара!",
+        f"👋 Привет, {message.from_user.first_name}!"
+        f"\n😎 Это бот <a href='https://www.youtube.com/@pleasantildar'>Приятного Ильдара</a>!"
+        f"\n🤖 У бота есть следующие команды:"
+        f"\n/vote_emotion - проголосовать какая эмоция ассоциируется с видео"
+        f"\n/vote_food - проголосовать какая закуска ассоциируется с видео"
+        f"\n/select_video - подобрать видео по эмоции"
+        f"\n👉 Команды также доступны в Меню", parse_mode="HTML"
     )
 
 
@@ -49,6 +55,6 @@ async def select_video(message: types.Message) -> None:
     get_emotions_url = f"{SITE_URL}/api/v1/emotions"
     response = requests.get(get_emotions_url)
     emotions_list = response.json()
-    await message.reply("Выберите эмоцию для подбора видео 🤔",
+    await message.reply("🤔 Выберите эмоцию для подбора видео",
                         reply_markup=await select_video_keyboard(emotions_list)
                         )
