@@ -47,7 +47,7 @@ async def get_selected_video(call: CallbackQuery, callback_data: SelectVideo) ->
 
             await call.message.answer(f'{video_response.json()["video"]["url"]}')
             if food_response.json()["food"]:
-                await call.message.answer("К этому видео отлично подходит закуска:")
+                await call.message.answer("😋 К этому видео отлично подходит закуска:")
                 await call.message.answer_sticker(f'{food_response.json()["food"]["sticker_id"]}')
         else:
             await call.message.answer("🤪 C этой эмоцией пока не связано ни одно видео")
