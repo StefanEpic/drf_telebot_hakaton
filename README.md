@@ -9,12 +9,6 @@ The bot has commands:
 - `/vote_food` - vote: what food is associated with the video?
 - `/select_video` - choose a video based on emotion and a snack for the video
 
-👉 [Presentation video](https://drive.google.com/file/d/16fTpsrhUQ0DJNTDCab_toDnviKzuT6yb/view?usp=drive_link)
-
-👉 [Telegram Bot](https://t.me/TestTestIldarBotBot)
-
-👉 [Swagger](http://31.129.98.245/api/v1/schema/swagger-ui/)
-
 ## 📈 DRF API Tests
 ```
 Name                                Stmts   Miss  Cover
